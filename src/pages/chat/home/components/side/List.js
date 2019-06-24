@@ -3,7 +3,6 @@
 import React, { Component } from 'react';
 import { Scrollbars } from 'react-custom-scrollbars';
 import classnames from "classnames"
-import {connect} from "dva";
 import  "./list.scss";
 
 
@@ -69,28 +68,28 @@ class List extends Component{
 
   }
   render(){
-    let {_filterKey,_sessions,_currentId,_currentChat,ACTIONS} = this.props;
+    let {friends,filterKey,currentChatId,clickLi} = this.props;
     return (
       <div className="list-wrap">
         <div className="list">
           <Scrollbars >
             <ul>
-              {/*{*/}
-                {/*_sessions.map((item,i)=>{*/}
-                  {/*return (*/}
-                    {/*<li key={"index"+i} className={classnames({*/}
-                      {/*"active":(item.id === _currentId&&_currentId==_currentChat.id),*/}
-                      {/*"hide":(_filterKey != "" && item.user.name.indexOf(_filterKey) < 0)*/}
-                    {/*})} onClick={()=>ACTIONS.set_session(item.id)}>*/}
-                      {/*<p className="avatar">*/}
-                        {/*<img   width="40" height="40"src={item.user.img||"https://ps.ssl.qhimg.com/t01531c2d8bd3dbe644.jpg"} />*/}
-                      {/*</p>*/}
-                      {/*<p className="name">{item.user.name}</p>*/}
+              {
+                friends.map((item,i)=>{
+                  return (
+                    <li key={"index"+i} className={classnames({
+                      "active":(item.id === currentChatId),
+                      "hide":(filterKey != "" && item.nickname.indexOf(filterKey) < 0)
+                    })} onClick={()=>{clickLi(item.id)}}>
+                      <p className="avatar">
+                        <img   width="40" height="40"src={item.faceImage||"https://ps.ssl.qhimg.com/t01531c2d8bd3dbe644.jpg"} />
+                      </p>
+                      <p className="name">{item.nickname}</p>
                       {/*{item.status?(<i className={classnames("dot")} ></i>):(null)}*/}
-                    {/*</li>*/}
-                  {/*);*/}
-                {/*})*/}
-              {/*}*/}
+                    </li>
+                  );
+                })
+              }
             </ul>
           </Scrollbars>
         </div>
@@ -113,5 +112,5 @@ class List extends Component{
 
 
 
-export default connect()(List);
+export default List;
 

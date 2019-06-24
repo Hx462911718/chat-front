@@ -1,4 +1,4 @@
-// import * as services from "./services/login";
+import * as services from "./services/home";
 import modelExtend from "dva-model-extend";
 import {getTempleMem} from '@/utils/localMemory'
 import { modal } from 'utils/modal';
@@ -10,7 +10,8 @@ export default modelExtend(modal, {
 
   state:{
     isNextPage:false,
-
+    friends:[],
+    currentChatId:"",
   },
 
   subscriptions: {
@@ -20,9 +21,25 @@ export default modelExtend(modal, {
 
             const  userInfo = getTempleMem("userInfo");
             if(userInfo){
-
               //todo 加载用户好用列表
-              //todo 加载第一个用户的聊天信息
+              dispatch({
+                  type:"myFriends",
+                  payload:{
+                      id:userInfo.id
+                  }
+              }).then((data)=>{
+
+                if(data.length > 0) {
+
+                  //todo 加载第一个用户的聊天信息
+                  dispatch({
+                    type: "querySuccess",
+                    payload: {currentChatId: data[0].id}
+                  })
+                }
+              })
+
+
 
             }else {
               router.push("/chat/login")
@@ -34,11 +51,19 @@ export default modelExtend(modal, {
   },
 
   effects:{
-    //创建会话
-    // *login({ payload }, { call, put }){
-    //   const  result = yield call(services.login,payload);
-    //   return result;
-    // },
+
+    * myFriends({payload}, {call, put}) {
+      const {data} = yield call(services.myFriends, payload);
+      if (data) {
+        yield put({
+          type: 'querySuccess',
+          payload: {
+            friends:data
+          }
+        })
+        return data;
+      }
+    },
 
   },
 

@@ -8,8 +8,20 @@ import {connect} from "dva"
 class Home extends Component {
   render() {
     const  userInfo =  getTempleMem("userInfo");
+    const {home,dispatch} = this.props;
+    const {friends,currentChatId} = home
     const sideProps = {
         userInfo:userInfo,
+        friends:friends,
+        currentChatId:currentChatId,
+        clickLi:(data)=>{
+            dispatch({
+              type:"home/querySuccess",
+              payload:{
+                currentChatId:data
+              }
+            })
+        }
     }
 
     return (

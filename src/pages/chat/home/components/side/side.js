@@ -13,7 +13,7 @@ class Sidebar extends Component{
     super(props);
 
     this.state = {
-
+      filterKey:"",
 
     };
   }
@@ -22,9 +22,18 @@ class Sidebar extends Component{
   }
   search(e){
     let {value}=e.target;
+      this.setState({
+        filterKey:value
+      })
   }
   render(){
-    let {userInfo} = this.props;
+    let {userInfo,friends,currentChatId,clickLi} = this.props;
+    const  listProps= {
+      friends:friends,
+      currentChatId:currentChatId,
+      filterKey:this.state.filterKey,
+      clickLi:clickLi,
+    }
     return (
       <section className="sidebar">
         <div className="card">
@@ -36,7 +45,7 @@ class Sidebar extends Component{
             <input className="search" type="text" onChange={(e)=>this.search(e)} placeholder="search user..." />
           </footer>
         </div>
-        <List/>
+        <List {...listProps}/>
       </section>
     );
   }
