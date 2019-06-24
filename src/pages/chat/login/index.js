@@ -1,4 +1,6 @@
 import React, { Component} from 'react';
+import {setTempleMem} from '@/utils/localMemory'
+import router from 'umi/router';
 import $ from "jquery";
 import {connect} from "dva";
 import styles from './Index.css';
@@ -50,9 +52,13 @@ class Login extends Component{
       }).then((data)=>{
           console.log(data)
         if(data.code === 1){
-            //跳转---主页
+            //跳转---
+          this.flag = false;
+          setTempleMem("userInfo",data.data);
+          router.push("/chat/home")
         }else {
-            this.setState({error:`${data.desc}……`})
+          this.flag = false;
+          this.setState({error:`${data.desc}……`})
         }
       })
     };

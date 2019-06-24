@@ -61,9 +61,6 @@ export default async function request(url,options={}) {
   delete options.queryParams
   options.headers={
     'Content-Type':'application/json',
-    'userToken' : getPersistenceMem("userToken"),
-    'serverToken':getPersistenceMem("serverToken"),
-    'roleType':  getPersistenceMem("roleType"),
   }
   switch (type){
     case 'GET':

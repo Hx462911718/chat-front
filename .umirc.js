@@ -24,6 +24,9 @@ export default {
       },
     }],
   ],
+  cssLoaderOptions:{
+    localIdentName:'[local]'
+  },
   chainWebpack(config, { webpack }) {
     config
       .plugin('env')
