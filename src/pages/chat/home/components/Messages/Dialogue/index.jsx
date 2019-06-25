@@ -57,7 +57,7 @@ class Dialogue extends Component {
 
       <section className="message-w">
         <header className="group-name">
-          <h3>测试用户</h3>
+          <h3>{currentChatUser.nickname}</h3>
         </header>
         <div className="message">
           <Scrollbars>
