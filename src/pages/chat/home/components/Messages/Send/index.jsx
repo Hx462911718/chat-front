@@ -1,8 +1,7 @@
 
-import React, { Component, PropTypes } from 'react';
-import {connect} from "dva";
+import React, { Component} from 'react';
+
 import classnames from 'classnames';
-// import actions from "src/actions";
 import './Index.scss';
 
 
@@ -55,23 +54,15 @@ class SendMsg extends Component{
 
 	}
 	save(){
-		let {ACTIONS,_user,_currentId} = this.props;
+		const {userInfo,socket,currentChatId} = this.props;
 		let {content} = this.state;
 		if(this.flag){
 			return false;
 		};
 		this.flag = true;
-		//todo 发送消息
-		// ACTIONS.send_message({
-		// 	user:_user,id:_currentId,content:content,
-		// 	success:(req)=>{
-		// 		this.flag = false;
-		// 	},
-		// 	error:()=>{
-		// 		this.flag = false;
-		// 	}
-		// });
-		this.setState({
+    socket.emit('chatMessage', {sender:userInfo.id,receiver:currentChatId,msgFlag:"C",content:this.state.content,sendTime:new Date()})
+    this.flag = false;
+    this.setState({
 			content:""
 		},()=>{
 			this.refs.textarea.value ="";
@@ -104,7 +95,7 @@ class SendMsg extends Component{
 		if(!this.validate(e)){
 			return false;
 		}else{
-			this.save();
+			this.enter(e);
 		};
 	}
 	destroy(){
@@ -132,5 +123,5 @@ class SendMsg extends Component{
 };
 
 
-export default connect()(SendMsg);
+export default SendMsg;
 

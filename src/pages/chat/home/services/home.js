@@ -9,3 +9,9 @@ export function myFriends(params) {
   });
 }
 
+export function queryChatMsg(params) {
+  return request(basePath+'/user/queryChatMsg', {
+    queryParams: {...params},
+    type: 'POST'
+  });
+}

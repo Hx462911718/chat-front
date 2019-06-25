@@ -11,11 +11,14 @@ import List from './List'
 class Sidebar extends Component{
   constructor(props){
     super(props);
-
+    const {socket} = this.props;
     this.state = {
       filterKey:"",
 
     };
+    socket.on('connect', function () {
+      console.log("连接成功");
+    });
   }
   componentDidMount(){
 

@@ -25,17 +25,23 @@ class Messages extends Component{
 	}
 
 	render(){
-		let {_sessions,_currentChat,_currentId} = this.props;
-
-		// if(!Object.keys(_currentChat).length || _currentChat.id != _currentId){
-		// 	return (
-		// 		<div className="dialogue-tips">请选择要对话的用户</div>
-		// 	);
-		// };
+		let {userInfo,socket,currentChatId,currentChatUser,messages,refreMsg} = this.props;
+		const  sendProps={
+      userInfo:userInfo,
+      socket:socket,
+      currentChatId:currentChatId
+    };
+    const  dialogueProps={
+      userInfo:userInfo,
+      messages:messages,
+      socket:socket,
+      currentChatUser:currentChatUser,
+      refreMsg:refreMsg,
+    }
 		return (
 			<div className="chat-main">
-				<Dialogue />
-				<Send />
+				<Dialogue {...dialogueProps} />
+				<Send {...sendProps} />
 			</div>
 		);
 	}

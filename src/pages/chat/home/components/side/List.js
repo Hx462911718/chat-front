@@ -80,7 +80,7 @@ class List extends Component{
                     <li key={"index"+i} className={classnames({
                       "active":(item.id === currentChatId),
                       "hide":(filterKey != "" && item.nickname.indexOf(filterKey) < 0)
-                    })} onClick={()=>{clickLi(item.id)}}>
+                    })} onClick={()=>{clickLi(item)}}>
                       <p className="avatar">
                         <img   width="40" height="40"src={item.faceImage||"https://ps.ssl.qhimg.com/t01531c2d8bd3dbe644.jpg"} />
                       </p>
