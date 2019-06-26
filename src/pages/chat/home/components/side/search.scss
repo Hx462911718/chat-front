@@ -1,0 +1,16 @@
+.rc-dialog-body {
+  padding: 20px;
+  .content{
+    display: flex;
+    flex-direction: column;
+  }
+  h3{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 31px;
+    color: #333;
+  }
+  .component-input {
+    position: relative;
+  }
+}

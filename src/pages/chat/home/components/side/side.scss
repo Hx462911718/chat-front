@@ -29,8 +29,9 @@
         }
         .search {
             padding: 0 10px;
-            width: 100%;
+            width: 85%;
             font-size: 12px;
+            float: left;
             @include images($url:"assets/side/images/search.png",$size:(20px auto));
             background-position:95% 50%;
             color: #fff;
@@ -40,6 +41,12 @@
             border-radius: 100px;
             outline: none;
             background-color: #26292E;
+        }
+        .add{
+          line-height: 30px;
+          font-size: 27px;
+          padding: 0 0px;
+          color: #f5222d;
         }
     }
 }

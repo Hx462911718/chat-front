@@ -1,5 +1,6 @@
 
 import React, { Component, PropTypes } from 'react';
+import { Icon} from 'antd';
 import classnames from 'classnames';
 import "./side.scss"
 import List from './List'
@@ -30,7 +31,7 @@ class Sidebar extends Component{
       })
   }
   render(){
-    let {userInfo,friends,currentChatId,clickLi} = this.props;
+    let {userInfo,friends,currentChatId,clickLi,searchUser} = this.props;
     const  listProps= {
       friends:friends,
       currentChatId:currentChatId,
@@ -45,7 +46,9 @@ class Sidebar extends Component{
             <p className="name">{userInfo.nickname}</p>
           </header>
           <footer>
+
             <input className="search" type="text" onChange={(e)=>this.search(e)} placeholder="search user..." />
+            <a className="add" onClick={()=>{searchUser()}}><Icon type="plus-circle" /></a>
           </footer>
         </div>
         <List {...listProps}/>

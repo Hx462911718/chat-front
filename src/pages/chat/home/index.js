@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Sidebar from "./components/side/side"
+import SearchUser from "./components/side/search"
 import {getTempleMem,setTempleMem} from '@/utils/localMemory'
 import Messages from "./components/Messages/Index/index"
 import "./Index.scss"
@@ -16,6 +17,33 @@ class Home extends Component {
         friends:friends,
         socket:socket,
         currentChatId:currentChatId,
+        searchUser: (item,isBatch) => {
+        let transferOpts = {
+          visible: true,
+          options: {
+            url: '/',
+            title: '搜索用户',
+            winType: 'normal',
+            height: 210,
+            winId: 'searchUser',
+            width: 360,
+            footer: null,
+            onClose: {},// modal关闭的回调函数
+          },
+          content: {},
+          handleCancel:()=>{
+            global.closeModalWindow('searchUser');
+          },
+          children: <SearchUser/>
+          ,
+        }
+        global.g_app._store.dispatch({
+          type:"genModels/showModal",
+          payload:{
+            ...transferOpts
+          }
+        })
+      },
         clickLi:(data)=>{
             dispatch({
               type:"home/querySuccess",

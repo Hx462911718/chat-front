@@ -1,0 +1,177 @@
+/*@import url('https://js.arcgis.com/3.20/esri/css/esri.css');*/
+
+.paging {
+
+  background: #fbfbfb;
+  /*border: 1px solid #dfdfdf;*/
+  /* border-top: 0 none; */
+  clear: both;
+  text-align: left;
+  padding: 5px 0px 5px 10px;
+}
+
+
+.clearfix {
+  *zoom: 1;
+}
+
+
+.paging a {
+  width: auto;
+  height: 30px;
+  background: #fff;
+  border: 1px solid #d6d6d6;
+  border-radius: 2px;
+  display: inline-block;
+  text-align: center;
+  line-height: 30px;
+  color: #6c6c6c;
+  padding: 0px 10px;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.paging span {
+  float: right;
+  line-height: 30px;
+  margin-right: 10px;
+}
+
+.sort {
+  clear: both;
+  position: relative;
+  display: inline!important;
+  margin-right: 20px;
+}
+.sort .ti-toggle {
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  border: 1px solid #bdc8cf;
+  color: #666;
+  width: 280px;
+  display: inline-block;
+  background-color: #fff;
+}
+.sort .tree-box {
+  position: absolute;
+  top: 23px;
+  width: 280px;
+  height: auto;
+  z-index: 997;
+  background-color: #fff;
+  border: 1px solid #bfdfef;
+  border-radius: 5px;
+  box-shadow: 0 3px 5px rgba(0,0,0,.2);
+  font-size: 14px!important;
+  display: none;
+}
+
+.grid {
+  clear: both;
+  position: relative;
+}
+.grid .ti-toggle {
+  background: #fff3e0;
+  border: 1px solid #e5c9a8;
+  border-radius: 14px;
+  padding: 3px 15px;
+  color: #ef7513;
+  position: absolute;
+  right: 0px;
+  top: -38px;
+}
+.grid .tree-box {
+  width: 280px;
+  height: auto;
+  z-index: 997;
+  background-color: #fff;
+  border: 1px solid #bfdfef;
+  border-radius: 5px;
+  box-shadow: 0 3px 5px rgba(0,0,0,.2);
+  font-size: 14px!important;
+  position: absolute;
+  top: -9px;
+  right: 0px;
+  display: none;
+}
+
+.rightTop{
+  clear: both;
+  position: relative;
+}
+.rightTop .ti-toggle{
+  background: #fff3e0;
+  border: 1px solid #e5c9a8;
+  border-radius: 14px;
+  color: #ef7513;
+  position: absolute;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  right: 0px;
+  top: -33px;
+}
+.rightTop .tree-box {
+  width: 280px;
+  height: auto;
+  z-index: 997;
+  background-color: #fff;
+  border: 1px solid #bfdfef;
+  border-radius: 5px;
+  box-shadow: 0 3px 5px rgba(0,0,0,.2);
+  font-size: 14px!important;
+  position: absolute;
+  top: -9px;
+  right: 0px;
+  display: none;
+}
+
+.mid {
+  clear: both;
+  position: relative;
+  display: inline!important;
+  margin-right: 20px;
+}
+.mid .ti-toggle {
+  background: #fff3e0;
+  border: 1px solid #e5c9a8;
+  border-radius: 14px;
+  color: #ef7513;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 30px;
+  line-height: 30px;
+  display: inline-block;
+}
+.mid .tree-box {
+  position: absolute;
+  top: 23px;
+  width: 280px;
+  height: auto;
+  z-index: 997;
+  background-color: #fff;
+  border: 1px solid #bfdfef;
+  border-radius: 5px;
+  box-shadow: 0 3px 5px rgba(0,0,0,.2);
+  font-size: 14px!important;
+  display: none;
+}
+
+
+.search-box {background: #fff; position:absolute; top:10px; left:10px; z-index:999}
+.search-box .btn-search{ display:inline-block; height:38px; width:57px; background:url(http://14.215.115.87:4007/csfw_web/skins/skins2/images/icon_search.png) center center no-repeat #3385FF;float: left;border-radius: 0px 2px 2px 0px;box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.15); }
+.search-box .input-clear{display:block; height:36px; width:36px; background:url(http://14.215.115.87:4007/csfw_web/skins/skins2/images/icon_clear.png) center center no-repeat; position:absolute; right:58px;}
+.search-box .btn-search:hover{background-color:#2e77e5;}
+.search-box input{padding: 0 10px;line-height: 20px;font-size: 14px;height: 36px;border-radius: 2px 0px 0px 2px;float: left;width: 293px;padding-right:40px; border:1px solid #a7c0e0; border-right:none;}
+
+.cardlist{width:342px; position:absolute; left:10px; top:47px; background:#fff; border:1px solid #ccc; border-top:none; overflow:hidden;}
+.cardlist .poslist{height:390px;}
+
+
+.fw_sj{width:590px;font-size:12px;color:#666;padding:10px;/*background:#f8f8f8;*/ background:none;}
+.sj_bc1{width:575px;height:40px;z-index:99;padding:10px 15px 0 0;position: absolute;text-align: right;}
+
+
+
