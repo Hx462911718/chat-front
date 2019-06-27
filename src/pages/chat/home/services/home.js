@@ -15,3 +15,10 @@ export function queryChatMsg(params) {
     type: 'POST'
   });
 }
+
+export function queryUserByNickname(params) {
+  return request(basePath+'/user/queryUserByNickname', {
+    queryParams: {...params},
+    type: 'POST'
+  });
+}

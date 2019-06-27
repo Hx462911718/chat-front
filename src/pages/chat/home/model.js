@@ -88,6 +88,19 @@ export default modelExtend(modal, {
       }
     },
 
+    * queryUserByNickname({payload}, {call, put}) {
+      const {data} = yield call(services.queryUserByNickname, payload);
+      if (data) {
+        yield put({
+          type: 'querySuccess',
+          payload: {
+
+          }
+        })
+        return data;
+      }
+    },
+
     * queryChatMsg({payload}, {call, put}) {
       const {data} = yield call(services.queryChatMsg, payload);
       if (data) {

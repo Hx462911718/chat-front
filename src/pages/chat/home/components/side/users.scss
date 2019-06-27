@@ -1,0 +1,37 @@
+.a{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 6px;
+  cursor: default;
+}
+.b{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c{
+    margin-left: 10px;
+    color: #333;
+    font-size: 14px;
+    word-break: keep-all;
+    max-width: 120px;
+
+}
+
+.d{
+
+  color: #666;
+  font-size: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-left: 12px;
+  text-align: right;
+}

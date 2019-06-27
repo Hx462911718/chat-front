@@ -17,7 +17,7 @@ class Home extends Component {
         friends:friends,
         socket:socket,
         currentChatId:currentChatId,
-        searchUser: (item,isBatch) => {
+        searchUser: () => {
         let transferOpts = {
           visible: true,
           options: {
@@ -34,7 +34,7 @@ class Home extends Component {
           handleCancel:()=>{
             global.closeModalWindow('searchUser');
           },
-          children: <SearchUser/>
+          children: <SearchUser dispatch={dispatch}/>
           ,
         }
         global.g_app._store.dispatch({
