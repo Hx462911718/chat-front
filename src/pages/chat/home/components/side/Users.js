@@ -9,7 +9,7 @@ class Users extends Component {
     const {data} = this.props;
     return (
       <div>
-        {
+        {data?
           data.map((item, i) => {
             return(
             <div className="a">
@@ -20,7 +20,7 @@ class Users extends Component {
               </div>
               <p className="d">Chrome&nbsp;&nbsp;OS X</p></div>
             );
-          })
+          }): <h3>暂时未搜索到用户</h3>
       }
       </div>
     );
