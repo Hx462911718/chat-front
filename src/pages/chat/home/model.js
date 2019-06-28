@@ -16,6 +16,7 @@ export default modelExtend(modal, {
     currentChatId:"",
     messages:[],
     currentChatUser:{},
+    reList:[],
   },
 
   subscriptions: {
@@ -35,6 +36,12 @@ export default modelExtend(modal, {
                 type:"refreshUi",
                 payload:{socket:socket}
               });
+              dispatch({
+                type:"queryFriendRequest",
+                payload:{
+                  id:userInfo.id
+                }
+              })
               //todo 加载用户好用列表
               dispatch({
                   type:"myFriends",
@@ -113,6 +120,19 @@ export default modelExtend(modal, {
         return data;
       }
     },
+    * queryFriendRequest({payload}, {call, put}) {
+      const {data} = yield call(services.queryFriendRequest, payload);
+      if (data) {
+        yield put({
+          type: 'querySuccess',
+          payload: {
+            reList:data
+          }
+        })
+        return data;
+      }
+    },
+
 
   },
 

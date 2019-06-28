@@ -11,11 +11,13 @@ class Home extends Component {
   render() {
     const  userInfo =  getTempleMem("userInfo");
     const {home,dispatch} = this.props;
-    const {friends,currentChatId,socket,currentChatUser,messages} = home
+    const {friends,currentChatId,socket,currentChatUser,messages,reList} = home
     const sideProps = {
         userInfo:userInfo,
         friends:friends,
         socket:socket,
+        reList:reList,
+        dispatch:dispatch,
         currentChatId:currentChatId,
         searchUser: () => {
         let transferOpts = {

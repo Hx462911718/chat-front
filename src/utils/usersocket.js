@@ -4,7 +4,7 @@ import {getTempleMem} from "@/utils/localMemory";
 
 const options = {
   query:{
-    mac:getTempleMem("userInfo").id,
+    mac:getTempleMem("userInfo")?getTempleMem("userInfo").id:null,
   },
 }
 

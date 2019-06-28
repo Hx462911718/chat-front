@@ -22,3 +22,10 @@ export function queryUserByNickname(params) {
     type: 'POST'
   });
 }
+
+export function queryFriendRequest(params) {
+  return request(basePath+'/user/queryFriendRequest', {
+    queryParams: {...params},
+    type: 'POST'
+  });
+}

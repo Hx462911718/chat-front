@@ -1,0 +1,37 @@
+.ra{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 6px;
+  cursor: default;
+}
+.rb{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.rc{
+  margin-left: 10px;
+  color: #40a9ff;
+  font-size: 15px;
+  word-break: keep-all;
+  max-width: 120px;
+
+}
+
+.d{
+
+  color: #666;
+  font-size: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-left: 12px;
+  text-align: right;
+}
