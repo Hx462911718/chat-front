@@ -35,7 +35,7 @@ class SearchUser extends Component {
           handleCancel:()=>{
             global.closeModalWindow('users');
           },
-          children: <Users data={data}/>
+          children: <Users data={data} socket={this.props.socket}/>
           ,
         }
         global.g_app._store.dispatch({

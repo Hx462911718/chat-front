@@ -34,7 +34,7 @@ class Home extends Component {
           handleCancel:()=>{
             global.closeModalWindow('searchUser');
           },
-          children: <SearchUser dispatch={dispatch}/>
+          children: <SearchUser dispatch={dispatch} socket={socket}/>
           ,
         }
         global.g_app._store.dispatch({
